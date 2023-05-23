@@ -1,0 +1,14 @@
+name: productiontest
+
+on:
+  push:
+    branches:
+      - 'main' 
+
+jobs:
+  echo_branch:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print deployment message
+        run: "echo now deploying to production"

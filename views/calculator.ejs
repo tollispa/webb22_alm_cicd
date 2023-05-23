@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <title>Calc</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        margin: 1rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        padding: 0.5rem;
+        border-radius: 3px;
+        border: none;
+      }
+
+      button {
+        padding: 0.5rem;
+        border-radius: 3px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      p {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Group X Calc</h1>
+    <div>
+      <form method="get">
+        <label for="val1">Sum 1</label>
+        <input type="text" name="val1" id="val1" />
+        <label for="val2">Sum 2</label>
+        <input type="text" name="val2" id="val2" />
+        <label for="operator">Operator</label>
+        <select name="operator" id="operator">
+          <option value="add">Add (+)</option>
+          <option value="remove">Subtract (-)</option>
+          <option value="multiply">Multiply (*)</option>
+          <option value="divide">Divide (/)</option>
+        </select>
+        <button>Calculate</button>
+      </form>
+    </div>
+    <% if (add) { %>
+    <p>Result of <%= val1 %> + <%= val2 %>: <%= add %></p>
+    <% } else if (remove) { %>
+    <p>Result of <%= val1 %> - <%= val2 %>: <%= remove %></p>
+    <% } else if (multiply) { %>
+    <p>Result of <%= val1 %> * <%= val2 %>: <%= multiply %></p>
+    <% } else if (divide) { %>
+    <p>Result of <%= val1 %> / <%= val2 %>: <%= divide %></p>
+    <% } else { %>
+    <p>No calculation performed yet.</p>
+    <% } %>
+  </body>
+</html>

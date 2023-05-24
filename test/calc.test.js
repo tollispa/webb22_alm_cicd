@@ -43,4 +43,11 @@ describe("Calculator", function () {
       assert.strictEqual(result, 5);
     });
   });
+  describe("#multiply", function () {
+    it("should multiply two numbers", function () {
+      const result = calculator.multiply(2, 4);
+      assert.strictEqual(result, 12);
+    });
+  });
 });
+

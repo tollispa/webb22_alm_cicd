@@ -9,6 +9,3 @@ router.get('/', (req, res) => {
 module.exports = router;
 
 
-router.get('/sabotage', (req, res) => {
-  res.json('TP, PS, DT, VK');
-});

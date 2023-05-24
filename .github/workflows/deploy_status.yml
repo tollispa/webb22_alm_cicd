@@ -1,0 +1,13 @@
+name: devStatus
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  fake-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: echo branch
+        run: "echo now deploying branch: $GITHUB_REF_NAME to the test server"

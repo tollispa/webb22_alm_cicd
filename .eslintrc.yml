@@ -2,9 +2,16 @@ env:
   node: true
   commonjs: true
   es2021: true
-extends: eslint:recommended
-overrides: []
+extends:
+  - eslint:recommended
+  - plugin:mocha/recommended
 parserOptions:
   ecmaVersion: latest
-rules: {'no-unused-vars': ['error', { argsIgnorePattern: 'next'}]
-}
+plugins:
+  - mocha
+rules:
+  "no-unused-vars": ["error", { argsIgnorePattern: "^(next)$" }]
+overrides:
+  - files: "calc.test.js"
+    env:
+      mocha: true

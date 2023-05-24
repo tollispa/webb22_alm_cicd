@@ -1,0 +1,35 @@
+name: Pipeline
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  echo_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test runs on main
+        run: 'echo Branch: main'
+
+  check_unit_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: package install
+        run: 'npm i'
+
+      - name: units tests
+        run: 'npm run test'
+
+      - name: lint test
+        run: 'npm run lint'

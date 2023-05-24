@@ -3,10 +3,10 @@ name: Pipeline
 on:
   pull_request:
     branches:
-      - 'main'
+      - 'master'
   push:
     branches:
-      - 'main'
+      - 'master'
 
 jobs:
   echo_branch:

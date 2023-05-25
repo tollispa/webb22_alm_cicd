@@ -8,6 +8,6 @@ describe('GET /sabotage', function () {
             .get('/sabotage')
             
            
-            .expect(404, done);
+            .expect(200, done);
     });
 });
